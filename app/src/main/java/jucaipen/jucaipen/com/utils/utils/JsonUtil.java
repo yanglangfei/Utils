@@ -26,13 +26,11 @@ public class JsonUtil {
                 int id=object.getInt("id");
                 String title=object.getString("title");
                 int typeId=object.getInt("typeId");
-                String linkUrl=object.getString("linkUrl");
                 int sortId=object.getInt("sortId");
                 Advise advise=new Advise();
                 advise.setId(id);
                 advise.setTitle(title);
                 advise.setTypeId(typeId);
-                advise.setLinkUrl(linkUrl);
                 advise.setSortId(sortId);
                 advises.add(advise);
             }

@@ -1,7 +1,10 @@
-package jucaipen.jucaipen.com.utils;
+package jucaipen.jucaipen.com.utils.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.xutils.common.Callback;
@@ -12,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import jucaipen.jucaipen.com.utils.R;
 import jucaipen.jucaipen.com.utils.model.Advise;
 import jucaipen.jucaipen.com.utils.utils.JsonUtil;
 import jucaipen.jucaipen.com.utils.utils.NetUtils;
@@ -33,6 +37,13 @@ public class MainActivity extends Activity{
     }
 
     private void initData() {
+        findViewById(R.id.into).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent into=new Intent(MainActivity.this,SearchActivity.class);
+                MainActivity.this.startActivity(into);
+            }
+        });
         info= (TextView) findViewById(R.id.info);
         //获取广告信息
         param.put("type",1);
