@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.bm.library.PhotoView;
+
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
@@ -40,7 +42,7 @@ public class MainActivity extends Activity{
         findViewById(R.id.into).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent into=new Intent(MainActivity.this,SearchActivity.class);
+                Intent into=new Intent(MainActivity.this,PhoteActivity.class);
                 MainActivity.this.startActivity(into);
             }
         });
