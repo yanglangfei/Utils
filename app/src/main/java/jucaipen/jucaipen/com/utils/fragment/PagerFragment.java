@@ -1,4 +1,4 @@
-package jucaipen.jucaipen.com.utils.activity;
+package jucaipen.jucaipen.com.utils.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -20,7 +20,7 @@ import jucaipen.jucaipen.com.utils.adapter.PAdapter;
 /**
  * Created by jucaipen on 16/6/1.
  */
-public class PagerActivity extends Fragment {
+public class PagerFragment extends Fragment {
     public ViewPager vp;
     private PAdapter adapter;
     private List<ImageView> imageViews=new ArrayList<>();
