@@ -1,4 +1,6 @@
 package jucaipen.jucaipen.com.utils.fragment;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -7,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.iflytek.cloud.RecognizerListener;
 import com.iflytek.cloud.RecognizerResult;
 import com.iflytek.cloud.SpeechConstant;
@@ -18,9 +20,13 @@ import com.iflytek.cloud.SpeechRecognizer;
 import com.iflytek.cloud.SpeechSynthesizer;
 import com.iflytek.cloud.SpeechUtility;
 import com.iflytek.cloud.SynthesizerListener;
+import com.zhy.changeskin.SkinManager;
+import com.zys.brokenview.BrokenTouchListener;
+import com.zys.brokenview.BrokenView;
 
 import jucaipen.jucaipen.com.utils.R;
 import jucaipen.jucaipen.com.utils.utils.VoiceUtils;
+import me.james.biuedittext.BiuEditText;
 
 
 /**
@@ -29,8 +35,10 @@ import jucaipen.jucaipen.com.utils.utils.VoiceUtils;
 public class PlayFragment  extends Fragment implements View.OnClickListener {
     private Button voice;
     private View view;
-    private EditText et_search;
+    private BiuEditText et_search;
     private TextView info;
+    private BrokenView bv;
+    private ImageView bro;
 
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
@@ -42,9 +50,15 @@ public class PlayFragment  extends Fragment implements View.OnClickListener {
     private void initView() {
         SpeechUtility.createUtility(getActivity(), SpeechConstant.APPID+"="+ VoiceUtils.APP_ID);
         voice= (Button) view.findViewById(R.id.voice);
+        bro= (ImageView) view.findViewById(R.id.bro);
         info= (TextView) view.findViewById(R.id.infos);
-        et_search= (EditText) view.findViewById(R.id.et_search);
+        et_search= (BiuEditText) view.findViewById(R.id.et_search);
         voice.setOnClickListener(this);
+
+        //玻璃破碎效果
+        bv=BrokenView.add2Window(getActivity());
+        BrokenTouchListener listener = new BrokenTouchListener.Builder(bv).setBreakDuration(2000).setCircleRiftsRadius(60).setFallDuration(3000).build();
+        bro.setOnTouchListener(listener);
 
     }
 

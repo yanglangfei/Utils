@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp">
+    </RelativeLayout>
+
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal">
-      <EditText
+      <me.james.biuedittext.BiuEditText
           android:layout_width="0dp"
           android:layout_weight="1"
+          app:biu_duration="800"
+          app:biu_text_color="@android:color/holo_red_dark"
+          app:biu_text_scale="1.5"
+          app:biu_type="flydown"
+          app:biu_text_start_size="12sp"
           android:id="@+id/et_search"
           android:layout_height="wrap_content" />
       <Button
@@ -22,5 +34,34 @@
         android:layout_width="wrap_content"
         android:id="@+id/infos"
         android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:id="@+id/bro"
+        android:src="@mipmap/ad1"/>
+
+    <com.vinaygaba.creditcardview.CreditCardView
+        android:id="@+id/card1"
+        android:layout_width="fill_parent"
+        android:layout_height="225dp"
+        android:background="@drawable/cardbackground_world"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        app:cardNumber="5500005555555559"
+        app:cardName="Vinay Gaba"
+        app:cardNumberTextColor="#cccccc"
+        app:cardNumberFormat="masked_all_but_last_four"
+        app:cardNameTextColor="#cccccc"
+        app:type="auto"
+        app:brandLogo="@mipmap/ad1"
+        app:putChip="true"
+        app:expiryDate = "02/22"
+        app:expiryDateTextColor="#cccccc"
+        app:isEditable="true"
+        app:validTillTextColor="#cccccc"
+        app:hintTextColor = "#cccccc"
+        />
 
 </LinearLayout>

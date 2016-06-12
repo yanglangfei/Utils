@@ -1,12 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent">
-
-    <android.support.v4.view.ViewPager
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/vp"
-        ></android.support.v4.view.ViewPager>
+        android:layout_height="50dp"
+        android:tag="skin:item_background:background"
+        >
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="200dp">
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/vp"
+            android:background="@android:color/darker_gray"
+            ></android.support.v4.view.ViewPager>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iv1"
+                android:src="@mipmap/yiru_xiaoyuan"/>
+            <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv1"
+                android:id="@+id/iv2"
+                android:layout_marginLeft="15dp"
+            android:src="@mipmap/xiaoyuan"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv2"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/iv3"
+                android:src="@mipmap/xiaoyuan"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+        <me.gujun.android.taggroup.TagGroup
+            android:layout_width="wrap_content"
+            android:id="@+id/tg"
+            android:layout_height="wrap_content">
+
+        </me.gujun.android.taggroup.TagGroup>
+
+    </RelativeLayout>
+
+
+
+
 
 </LinearLayout>

@@ -7,6 +7,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.widget.RadioGroup;
 
+import com.zhy.changeskin.SkinManager;
+import com.zhy.changeskin.base.BaseSkinActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,6 +58,11 @@ public class Main extends FragmentActivity implements RadioGroup.OnCheckedChange
 
 
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     @Override

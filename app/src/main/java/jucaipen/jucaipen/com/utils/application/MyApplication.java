@@ -1,11 +1,15 @@
-package jucaipen.jucaipen.com.utils;
+package jucaipen.jucaipen.com.utils.application;
 
 import android.app.Application;
 
+import com.zhy.changeskin.SkinManager;
+
 import org.xutils.x;
 
+import jucaipen.jucaipen.com.utils.BuildConfig;
+
 /**
- * Created by jucaipen on 16/5/28.
+ * Created by jucaipen on 16/6/12.
  */
 public class MyApplication extends Application {
 
@@ -14,6 +18,6 @@ public class MyApplication extends Application {
         super.onCreate();
         x.Ext.init(this);
         x.Ext.setDebug(BuildConfig.DEBUG);
-
+        SkinManager.getInstance().init(this);
     }
 }

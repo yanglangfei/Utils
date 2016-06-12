@@ -29,4 +29,15 @@ dependencies {
     compile 'com.bm.photoview:library:1.4.0'
     compile files('libs/Msc.jar')
     compile files('libs/Sunflower.jar')
+
+
+    compile 'me.gujun.android.taggroup:library:1.4'
+
+    compile 'com.xujinyang.BiuEditText:library:1.3.0'
+
+    compile 'com.zys:brokenview:1.0.3'
+
+    compile 'com.zhy:changeskin:3.0.0'
+
+    compile 'com.vinaygaba:creditcardview:1.0.3'
 }
