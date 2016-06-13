@@ -20,6 +20,7 @@ import com.iflytek.cloud.SpeechRecognizer;
 import com.iflytek.cloud.SpeechSynthesizer;
 import com.iflytek.cloud.SpeechUtility;
 import com.iflytek.cloud.SynthesizerListener;
+import com.vstechlab.easyfonts.EasyFonts;
 import com.zhy.changeskin.SkinManager;
 import com.zys.brokenview.BrokenTouchListener;
 import com.zys.brokenview.BrokenView;
@@ -54,6 +55,7 @@ public class PlayFragment  extends Fragment implements View.OnClickListener {
         info= (TextView) view.findViewById(R.id.infos);
         et_search= (BiuEditText) view.findViewById(R.id.et_search);
         voice.setOnClickListener(this);
+        voice.setTypeface(EasyFonts.robotoThin(getContext()));
 
         //玻璃破碎效果
         bv=BrokenView.add2Window(getActivity());
@@ -85,16 +87,19 @@ public class PlayFragment  extends Fragment implements View.OnClickListener {
     private  RecognizerListener recognizerListener=new RecognizerListener() {
         @Override
         public void onVolumeChanged(int i, byte[] bytes) {
+            Log.i("111", "onVolumeChanged: ");
 
         }
 
         @Override
         public void onBeginOfSpeech() {
+            Log.i("111", "onBeginOfSpeech: ");
 
         }
 
         @Override
         public void onEndOfSpeech() {
+            Log.i("111", "onEndOfSpeech: ");
 
         }
 

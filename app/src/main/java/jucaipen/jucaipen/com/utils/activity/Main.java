@@ -1,18 +1,16 @@
 package jucaipen.jucaipen.com.utils.activity;
-
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
-
-import com.zhy.changeskin.SkinManager;
-import com.zhy.changeskin.base.BaseSkinActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import github.nisrulz.easydeviceinfo.EasyDeviceInfo;
 import jucaipen.jucaipen.com.utils.R;
 import jucaipen.jucaipen.com.utils.adapter.FpAdapter;
 import jucaipen.jucaipen.com.utils.fragment.MyFragment;
@@ -55,6 +53,11 @@ public class Main extends FragmentActivity implements RadioGroup.OnCheckedChange
         main_vp.setAdapter(adapter);
         rg= (RadioGroup) findViewById(R.id.rg);
         rg.setOnCheckedChangeListener(this);
+
+        //获取设备信息
+        EasyDeviceInfo info=new EasyDeviceInfo(this);
+        String num=info.getCountry();
+        Log.i("111", "initView: "+num);
 
 
 

@@ -24,11 +24,16 @@
         <activity android:name=".activity.Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="cat.ereza.customactivityoncrash.RESTART"></action>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.PhoteActivity"></activity>
+        <activity android:name=".activity.ErrorActivity">
+            <intent-filter>
+                <action android:name="cat.ereza.customactivityoncrash.ERROR" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

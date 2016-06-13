@@ -1,6 +1,7 @@
 package jucaipen.jucaipen.com.utils.fragment;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.athkalia.emphasis.EmphasisTextView;
 import com.zhy.changeskin.SkinManager;
 
 import java.util.ArrayList;
@@ -31,6 +33,7 @@ import me.gujun.android.taggroup.TagGroup;
 public class PagerFragment extends Fragment implements ViewPager.OnPageChangeListener, TagGroup.OnTagClickListener, TagGroup.OnTagChangeListener {
     public ViewPager vp;
     private PAdapter adapter;
+    private EmphasisTextView etv;
     private ArrayList<ImageView> ivs;
     private List<ImageView> imageViews=new ArrayList<>();
     private  int images[]={R.mipmap.ad3,R.mipmap.ad1,R.mipmap.ad2,R.mipmap.ad3,R.mipmap.ad1};
@@ -70,6 +73,12 @@ public class PagerFragment extends Fragment implements ViewPager.OnPageChangeLis
         ivs.add((ImageView) view.findViewById(R.id.iv2));
         ivs.add((ImageView) view.findViewById(R.id.iv3));
         tg= (TagGroup) view.findViewById(R.id.tg);
+        etv= (EmphasisTextView) view.findViewById(R.id.etv);
+        etv.setText("hello");
+        etv.setTextToHighlight("he");
+        etv.setTextHighlightColor("#ff00ff");
+        etv.setCaseInsensitive(true);
+        etv.highlight();
         tg.setTags("精选","娱乐","体育");
         tg.setOnTagClickListener(this);
         tg.setOnTagChangeListener(this);
