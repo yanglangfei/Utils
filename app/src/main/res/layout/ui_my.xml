@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:htext="http://schemas.android.com/tools">
+    <com.jungly.gridpasswordview.GridPasswordView
+        android:id="@+id/pswView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:gpvTextColor="#2196F3"
+        app:gpvTextSize="25sp"
+        app:gpvLineColor="@android:color/darker_gray"
+        app:gpvLineWidth="1dp"
+        app:gpvGridColor="#ffffff"
+        app:gpvPasswordLength="6"
+        app:gpvPasswordTransformation="*"
+        app:gpvPasswordType="numberPassword"/>
+
+    <com.hanks.htextview.HTextView
+        android:id="@+id/text"
+        android:layout_below="@+id/pswView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        htext:animateType="anvil"
+        />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -9,6 +35,15 @@
         android:id="@+id/iv"
         android:layout_centerInParent="true"
         android:src="@mipmap/ic_launcher"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv"
+        android:id="@+id/zan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="点赞"/>
 
 
 

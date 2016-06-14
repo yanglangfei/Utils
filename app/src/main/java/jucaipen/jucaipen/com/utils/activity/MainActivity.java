@@ -46,7 +46,7 @@ public class MainActivity extends Activity{
         info= (TextView) findViewById(R.id.info);
         //获取广告信息
         param.put("type",1);
-        RequestParams p=NetUtils.sendHttpGet(url,param);
+        RequestParams p=NetUtils.sendXutilsGet(url,param);
         x.http().get(p, new Callback.CacheCallback<String>() {
             @Override
             public void onSuccess(String result) {
