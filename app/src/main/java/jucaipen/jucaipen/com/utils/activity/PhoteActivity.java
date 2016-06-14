@@ -15,6 +15,8 @@ import jucaipen.jucaipen.com.utils.R;
 
 /**
  * Created by jucaipen on 16/5/31.
+ *
+ *
  */
 public class PhoteActivity extends Activity implements View.OnClickListener {
     private PhotoView pv;

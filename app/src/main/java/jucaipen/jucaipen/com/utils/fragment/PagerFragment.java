@@ -2,6 +2,7 @@ package jucaipen.jucaipen.com.utils.fragment;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -25,10 +26,12 @@ import java.util.List;
 import jucaipen.jucaipen.com.utils.R;
 import jucaipen.jucaipen.com.utils.adapter.PAdapter;
 import me.gujun.android.taggroup.TagGroup;
-
+import tyrantgit.explosionfield.ExplosionField;
 
 /**
  * Created by jucaipen on 16/6/1.
+ *
+ *   视频录制git 项目 FFmpegMediaMetadataRetriever
  */
 public class PagerFragment extends Fragment implements ViewPager.OnPageChangeListener, TagGroup.OnTagClickListener, TagGroup.OnTagChangeListener {
     public ViewPager vp;
@@ -38,6 +41,7 @@ public class PagerFragment extends Fragment implements ViewPager.OnPageChangeLis
     private List<ImageView> imageViews=new ArrayList<>();
     private  int images[]={R.mipmap.ad3,R.mipmap.ad1,R.mipmap.ad2,R.mipmap.ad3,R.mipmap.ad1};
     private View view;
+    private  ImageView export;
     private TagGroup tg;
     private Handler handler=new Handler(){
         @Override
@@ -74,14 +78,32 @@ public class PagerFragment extends Fragment implements ViewPager.OnPageChangeLis
         ivs.add((ImageView) view.findViewById(R.id.iv3));
         tg= (TagGroup) view.findViewById(R.id.tg);
         etv= (EmphasisTextView) view.findViewById(R.id.etv);
-        etv.setText("hello");
+        //设置字体
+        Typeface face=Typeface.createFromAsset(getActivity().getAssets(),"fonts/angsaz.ttf");
+        etv.setTypeface(face);
+        etv.setTextSize(22);
         etv.setTextToHighlight("he");
         etv.setTextHighlightColor("#ff00ff");
         etv.setCaseInsensitive(true);
         etv.highlight();
+        //标签
         tg.setTags("精选","娱乐","体育");
         tg.setOnTagClickListener(this);
         tg.setOnTagChangeListener(this);
+
+        //粒子效果
+        export= (ImageView) view.findViewById(R.id.export);
+        final ExplosionField exp=new ExplosionField(getContext());
+        export.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exp.explode(export);
+            }
+        });
+
+
+
+        //循环 viewPgae
         for(int i=0;i<images.length;i++){
             ImageView iv=new ImageView(getContext());
             iv.setImageResource(images[i]);

@@ -7,6 +7,8 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,10 +59,6 @@ public class Main extends FragmentActivity implements RadioGroup.OnCheckedChange
         //获取设备信息
         EasyDeviceInfo info=new EasyDeviceInfo(this);
         String num=info.getCountry();
-        Log.i("111", "initView: "+num);
-
-
-
     }
 
     @Override
