@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dexOptions {
+        incremental true
+    }
 }
 
 dependencies {
@@ -67,9 +70,8 @@ dependencies {
     compile 'com.miguelcatalan:materialsearchview:1.4.0'
     compile 'com.lovedise:permissiongen:0.0.6'
     compile project(':library')
-
     compile 'com.bm.photoview:library:1.4.0'
-
-
     compile 'com.echodjb.shareloginlib:share:0.6'
+
+    compile 'net.wujingchao.android.view:simple-tag-imageview:1.0.1'
 }
