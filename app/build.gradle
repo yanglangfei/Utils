@@ -105,6 +105,13 @@ dependencies {
     compile 'com.meetic.dragueur:dragueur:1.0.0'
 
 
+    compile 'me.zhanghai.android.materialedittext:library:1.0.2'
+
+    compile 'com.miguelcatalan:materialsearchview:1.4.0'
+
+
+    compile 'com.lovedise:permissiongen:0.0.6'
+
 
 
 
